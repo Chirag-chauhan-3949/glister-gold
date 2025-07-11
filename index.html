@@ -1,498 +1,599 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glister Gold - Buy & Sell Gold, Silver & Jewelry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Glister Gold - Buy & Sell Gold, Silver & Jewelry</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            navy: {
-              50: "#E6E9F0",
-              100: "#C0C8DB",
-              200: "#97A3C2",
-              300: "#6D7FA8",
-              400: "#495F93",
-              500: "#002366",
-              600: "#001B52",
-              700: "#001342",
-              800: "#000B2C",
-              900: "#000418",
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                50: "#E6E9F0",
+                100: "#C0C8DB",
+                200: "#97A3C2",
+                300: "#6D7FA8",
+                400: "#495F93",
+                500: "#002366",
+                600: "#001B52",
+                700: "#001342",
+                800: "#000B2C",
+                900: "#000418",
+              },
+              gold: "#D4AF37",
+              darkgray: "#333333",
+              redbrand: "#E31937",
             },
-            gold: "#D4AF37",
-            darkgray: "#333333",
-            redbrand: "#E31937",
           },
         },
-      },
-    };
-  </script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
-  <style>
-    .hero-bg {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url("1.jpeg");
-      background-size: cover;
-      background-position: center;
-    }
+      };
+    </script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hero-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url("1.jpeg");
+        background-size: cover;
+        background-position: center;
+      }
 
-    .testimonial-bg {
-      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url("testimonial.jpg");
-      background-size: cover;
-      background-position: center;
-    }
+      .testimonial-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("testimonial.jpg");
+        background-size: cover;
+        background-position: center;
+      }
 
-    .smooth-scroll {
-      scroll-behavior: smooth;
-    }
+      .smooth-scroll {
+        scroll-behavior: smooth;
+      }
 
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s ease;
+      }
 
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .hover-lift {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .hover-lift:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .feature-card {
-      transition: all 0.3s ease;
-      border-left: 4px solid transparent;
-    }
-
-    .feature-card:hover {
-      border-left-color: #d4af37;
-      transform: translateX(5px);
-    }
-
-    .equipment-showcase {
-      background: linear-gradient(135deg, #001b52 0%, #000b2c 100%);
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
+      .fade-in.visible {
+        opacity: 1;
         transform: translateY(0);
       }
 
-      50% {
-        transform: translateY(-5px);
+      .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-    }
 
-    .float-flag {
-      animation: float 3s ease-in-out infinite;
-    }
-  </style>
-</head>
+      .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
 
-<body class="smooth-scroll bg-navy-800 text-gray-200">
-  <!-- Header -->
-  <header class="bg-navy-700 shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6">
-      <!-- Top Bar: Logo & Contact -->
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-          <img src="Glister Gold Logo.png" alt="Glister Gold Logo" class="h-20 sm:h-16 w-auto" />
-        </div>
+      .feature-card {
+        transition: all 0.3s ease;
+        border-left: 4px solid transparent;
+      }
 
-        <!-- Floating US Flag -->
-        <div class="hidden sm:block">
-          <img src="flag.png" alt="US Flag" class="w-10 h-auto float-flag" />
-        </div>
+      .feature-card:hover {
+        border-left-color: #d4af37;
+        transform: translateX(5px);
+      }
 
-        <!-- Contact Info -->
-        <div class="flex items-center space-x-2 text-gray-200 text-sm sm:text-base">
-          <i class="fas fa-phone text-[#D4AF37]"></i>
-          <span>Contact a Live Trader:</span>
-          <span class="ml-1 font-semibold underline text-redbrand">(555) 123-4567</span>
-        </div>
-      </div>
+      .equipment-showcase {
+        background: linear-gradient(135deg, #001b52 0%, #000b2c 100%);
+      }
 
-      <!-- Icon Grid (Full width below) -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-        <div class="text-center fade-in">
-          <div class="bg-accent w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2">
-            <i class="fas fa-coins text-[#D4AF37] text-xl sm:text-2xl"></i>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-5px);
+        }
+      }
+
+      .float-flag {
+        animation: float 3s ease-in-out infinite;
+      }
+    </style>
+  </head>
+
+  <body class="smooth-scroll bg-navy-800 text-gray-200">
+    <!-- Header -->
+    <header class="bg-white shadow-lg">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6"
+      >
+        <!-- Top Bar: Logo & Contact -->
+        <div
+          class="flex flex-col sm:flex-row justify-between items-center gap-4"
+        >
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <img
+              src="Glister Gold Logo.png"
+              alt="Glister Gold Logo"
+              class="h-20 sm:h-16 w-auto"
+            />
           </div>
-          <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-            Gold, Silver, Platinum & Coins
-          </h4>
-        </div>
-        <div class="text-center fade-in">
-          <div class="bg-accent w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2">
-            <i class="fas fa-gem text-[#D4AF37] text-xl sm:text-2xl"></i>
-          </div>
-          <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-            Jewelry
-          </h4>
-        </div>
-        <div class="text-center fade-in">
-          <div class="bg-accent w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2">
-            <i class="fas fa-utensils text-[#D4AF37] text-xl sm:text-2xl"></i>
-          </div>
-          <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-            Hollowware & Flatware
-          </h4>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- Precious Metals Ticker -->
-  <div class="bg-navy-900 border-t border-b border-navy-700 py-2">
-    <div class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center divide-x divide-navy-700">
-      <!-- GOLD -->
-      <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
-        <span class="font-medium text-gold">GOLD</span>
-        <span class="font-semibold text-gray-100">$3,336.11</span>
-        <span class="font-semibold text-redbrand">-2.45</span>
-      </div>
-      <!-- SILVER -->
-      <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
-        <span class="font-medium text-gold">SILVER</span>
-        <span class="font-semibold text-gray-100">$36.84</span>
-        <span class="font-semibold text-green-400">+0.02</span>
-      </div>
-      <!-- PLATINUM -->
-      <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
-        <span class="font-medium text-gold">PLATINUM</span>
-        <span class="font-semibold text-gray-100">$1,380.36</span>
-        <span class="font-semibold text-redbrand">-2.74</span>
-      </div>
-      <!-- PALLADIUM -->
-      <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
-        <span class="font-medium text-gold">PALLADIUM</span>
-        <span class="font-semibold text-gray-100">$1,119.00</span>
-        <span class="font-semibold text-redbrand">-4.05</span>
-      </div>
-    </div>
-  </div>
+          <!-- Floating US Flag -->
+          <div class="hidden sm:block">
+            <img src="flag.png" alt="US Flag" class="w-10 h-auto float-flag" />
+          </div>
 
-  <!-- Hero -->
-  <section id="home" class="hero-bg min-h-screen flex items-center py-10 sm:py-16 md:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="text-gray-100">
-          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gold">
-            WE KNOW<br />GOLD & SILVER
-          </h1>
-          <p class="text-base sm:text-lg md:text-xl mb-8 leading-relaxed">
-            Whether you are looking to invest in bullion or sell your old
-            jewelry, we can meet your needs with expert knowledge and fair
-            pricing.
-          </p>
-        </div>
-        <div class="relative">
+          <!-- Contact Info -->
           <div
-            class="absolute inset-0 bg-gradient-to-r from-gold/20 to-yellow-600/20 rounded-3xl blur-xl opacity-60 animate-pulse">
+            class="flex items-center space-x-2 text-darkgray text-sm sm:text-base"
+          >
+            <i class="fas fa-phone text-[#D4AF37]"></i>
+            <span>Contact a Live Trader:</span>
+            <span class="ml-1 font-semibold underline text-redbrand"
+              >(555) 123-4567</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Icon Grid (Full width below) -->
+    <section>
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-6"
+      >
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div class="text-center fade-in">
+            <div
+              class="bg-accent w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2"
+            >
+              <i class="fas fa-coins text-[#D4AF37] text-xl sm:text-2xl"></i>
+            </div>
+            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
+              Gold, Silver, Platinum & Coins
+            </h4>
+          </div>
+          <div class="text-center fade-in">
+            <div
+              class="bg-accent w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2"
+            >
+              <i class="fas fa-gem text-[#D4AF37] text-xl sm:text-2xl"></i>
+            </div>
+            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
+              Jewelry
+            </h4>
+          </div>
+          <div class="text-center fade-in">
+            <div
+              class="bg-accent w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-2"
+            >
+              <i class="fas fa-utensils text-[#D4AF37] text-xl sm:text-2xl"></i>
+            </div>
+            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
+              Hollowware & Flatware
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Precious Metals Ticker -->
+    <div class="bg-white border-t border-b border-gray-200 py-2">
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-wrap justify-center items-center divide-x divide-gray-200"
+      >
+        <!-- GOLD -->
+        <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
+          <span class="font-medium text-navy-700">GOLD</span>
+          <span class="font-semibold text-darkgray">$3,336.11</span>
+          <span class="font-semibold text-redbrand">-2.45</span>
+        </div>
+        <!-- SILVER -->
+        <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
+          <span class="font-medium text-navy-700">SILVER</span>
+          <span class="font-semibold text-darkgray">$36.84</span>
+          <span class="font-semibold text-green-600">+0.02</span>
+        </div>
+        <!-- PLATINUM -->
+        <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
+          <span class="font-medium text-navy-700">PLATINUM</span>
+          <span class="font-semibold text-darkgray">$1,380.36</span>
+          <span class="font-semibold text-redbrand">-2.74</span>
+        </div>
+        <!-- PALLADIUM -->
+        <div class="flex items-center px-4 space-x-2 text-sm sm:text-base">
+          <span class="font-medium text-navy-700">PALLADIUM</span>
+          <span class="font-semibold text-darkgray">$1,119.00</span>
+          <span class="font-semibold text-redbrand">-4.05</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="hero-bg min-h-screen flex items-center py-10 sm:py-16 md:py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div class="text-gray-100">
+            <h1
+              class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gold"
+            >
+              WE KNOW<br />GOLD & SILVER
+            </h1>
+            <p class="text-base sm:text-lg md:text-xl mb-8 leading-relaxed">
+              Whether you are looking to invest in bullion or sell your old
+              jewelry, we can meet your needs with expert knowledge and fair
+              pricing.
+            </p>
+          </div>
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-gold/20 to-yellow-600/20 rounded-3xl blur-xl opacity-60 animate-pulse"
+            ></div>
+            <div
+              class="relative bg-navy-900/50 bg-white rounded-3xl border border-gold/40 shadow-2xl overflow-hidden"
+            >
+              <div
+                class="flex justify-between items-center bg-navy-800 px-6 py-4 border-b border-gold"
+              >
+                <h3
+                  class="text-gold text-xl sm:text-2xl font-bold tracking-wide"
+                >
+                  EXPERTISE
+                </h3>
+              </div>
+              <div
+                class="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 text-center"
+              >
+                <div class="flex flex-col items-center">
+                  <div
+                    class="relative w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-yellow-600 shadow-xl"
+                  >
+                    <i
+                      class="fas fa-coins text-navy-900 text-2xl sm:text-3xl"
+                    ></i>
+                  </div>
+                  <h4 class="mt-4 text-navy-700 text-base sm:text-lg font-bold">
+                    GOLD, SILVER PLATINUM <br />& Coins
+                  </h4>
+                </div>
+                <div class="flex flex-col items-center">
+                  <div
+                    class="relative w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-yellow-600 shadow-xl"
+                  >
+                    <i
+                      class="fas fa-gem text-navy-900 text-2xl sm:text-3xl"
+                    ></i>
+                  </div>
+                  <h4 class="mt-4 text-navy-700 text-base sm:text-lg font-bold">
+                    JEWELRY
+                  </h4>
+                </div>
+                <div class="flex flex-col items-center">
+                  <div
+                    class="relative w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-yellow-600 shadow-xl"
+                  >
+                    <i
+                      class="fas fa-utensils text-navy-900 text-2xl sm:text-3xl"
+                    ></i>
+                  </div>
+                  <h4
+                    class="mt-4 text-navy-700 text-base sm:text-lg font-bold text-center"
+                  >
+                    HOLLOWARE &<br />FLATWARE
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-10 sm:py-16 md:py-20 bg-navy-700">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 sm:mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gold mb-4">
+            Our Services
+          </h2>
+          <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
+            We offer comprehensive precious metals services with expert
+            evaluations and competitive pricing
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div
+            class="relative rounded-2xl shadow-lg w-full max-h-[400px] overflow-hidden"
+          >
+            <img
+              src="3.jpeg"
+              alt="Jewelry Collection"
+              class="w-full h-full object-cover hover-lift"
+            />
+            <div class="absolute inset-0"></div>
+          </div>
+
+          <div>
+            <h3 class="text-2xl sm:text-3xl font-bold text-gold mb-6">
+              SELL YOUR VALUABLES
+            </h3>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+              Helping clients See Value Clearly to obtain the best returns for
+              valuables in estates, including rare coins, currency, jewelry and
+              historical collectibles. Call us about no obligation evaluations
+              and fair market appraisals.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+          <div class="order-2 md:order-1">
+            <h3 class="text-2xl sm:text-3xl font-bold text-gold mb-6">
+              BULLION
+            </h3>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
+              Buy or sell gold and silver coins, bars, jewelry, bullion, and
+              other precious metals in Buffalo, New York. Investors who choose
+              to invest in physical gold or silver bullion for straight
+              investment returns, as a hedge against other investments, and to
+              hold a tangible asset.
+            </p>
           </div>
           <div
-            class="relative bg-navy-900/50 backdrop-blur-xl rounded-3xl border border-gold/40 shadow-2xl overflow-hidden">
-            <div class="flex justify-between items-center bg-navy-800 px-6 py-4 border-b border-gold">
-              <h3 class="text-gold text-xl sm:text-2xl font-bold tracking-wide">
-                EXPERTISE
-              </h3>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 text-center">
-              <div class="flex flex-col items-center">
-                <div
-                  class="relative w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-yellow-600 shadow-xl">
-                  <i class="fas fa-coins text-navy-900 text-2xl sm:text-3xl"></i>
-                </div>
-                <h4 class="mt-4 text-gray-100 text-base sm:text-lg font-bold">
-                  GOLD, SILVER PLATINUM <br />& Coins
-                </h4>
-              </div>
-              <div class="flex flex-col items-center">
-                <div
-                  class="relative w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-yellow-600 shadow-xl">
-                  <i class="fas fa-gem text-navy-900 text-2xl sm:text-3xl"></i>
-                </div>
-                <h4 class="mt-4 text-gray-100 text-base sm:text-lg font-bold">
-                  JEWELRY
-                </h4>
-              </div>
-              <div class="flex flex-col items-center">
-                <div
-                  class="relative w-16 sm:w-20 h-16 sm:h-20 flex items-center justify-center rounded-full bg-gradient-to-r from-gold to-yellow-600 shadow-xl">
-                  <i class="fas fa-utensils text-navy-900 text-2xl sm:text-3xl"></i>
-                </div>
-                <h4 class="mt-4 text-gray-100 text-base sm:text-lg font-bold text-center">
-                  HOLLOWARE &<br />FLATWARE
-                </h4>
-              </div>
-            </div>
+            class="order-1 md:order-2 relative rounded-2xl shadow-lg w-full max-h-[400px] overflow-hidden"
+          >
+            <img
+              src="4.jpeg"
+              alt="Gold Bullion"
+              class="w-full h-full object-cover hover-lift"
+            />
+            <div class="absolute inset-0"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Services Section -->
-  <section id="services" class="py-10 sm:py-16 md:py-20 bg-navy-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 sm:mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gold mb-4">
-          Our Services
-        </h2>
-        <p class="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto">
-          We offer comprehensive precious metals services with expert
-          evaluations and competitive pricing
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        <div class="relative rounded-2xl shadow-lg w-full max-h-[400px] overflow-hidden">
-          <img src="3.jpeg" alt="Jewelry Collection" class="w-full h-full object-cover hover-lift" />
-          <div class="absolute inset-0 bg-gradient-to-t from-gray-800/50 to-gray-800/50"></div>
-        </div>
-
-        <div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-gold mb-6">
-            SELL YOUR VALUABLES
-          </h3>
-          <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-            Helping clients See Value Clearly to obtain the best returns for
-            valuables in estates, including rare coins, currency, jewelry and
-            historical collectibles. Call us about no obligation evaluations
-            and fair market appraisals.
+    <!-- Gold Jewelry Testing Section -->
+    <section class="py-10 sm:py-16 md:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 sm:mb-16">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-darkgray">
+            Professional Gold Testing with
+            <span class="text-redbrand">Cutting-Edge Accuracy</span>
+          </h2>
+          <p class="text-base sm:text-lg text-darkgray mt-4 max-w-3xl mx-auto">
+            Experience the most accurate gold testing technology available — no
+            damage, instant results, complete transparency.
           </p>
         </div>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-        <div class="order-2 md:order-1">
-          <h3 class="text-2xl sm:text-3xl font-bold text-gold mb-6">
-            BULLION
-          </h3>
-          <p class="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
-            Buy or sell gold and silver coins, bars, jewelry, bullion, and
-            other precious metals in Buffalo, New York. Investors who choose
-            to invest in physical gold or silver bullion for straight
-            investment returns, as a hedge against other investments, and to
-            hold a tangible asset.
-          </p>
-        </div>
-        <div class="order-1 md:order-2 relative rounded-2xl shadow-lg w-full max-h-[400px] overflow-hidden">
-          <img src="4.jpeg" alt="Gold Bullion" class="w-full h-full object-cover hover-lift" />
-          <div class="absolute inset-0 bg-black/40"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Gold Jewelry Testing Section -->
-  <section class="py-10 sm:py-16 md:py-20 bg-navy-700">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 sm:mb-16">
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gold">
-          Professional Gold Testing with
-          <span class="text-redbrand">Cutting-Edge Accuracy</span>
-        </h2>
-        <p class="text-base sm:text-lg text-gray-300 mt-4 max-w-3xl mx-auto">
-          Experience the most accurate gold testing technology available — no
-          damage, instant results, complete transparency.
-        </p>
-      </div>
-      <div class="grid grid-cols-1 xl:grid-cols-2 gap-16 items-stretch">
-        <div class="flex justify-center">
-          <img src="weight_machine.png" alt="Thermo Scientific Niton DXL Gold Tester"
-            class="rounded-3xl shadow-2xl w-full max-w-md object-cover" />
-        </div>
-        <div class="flex flex-col justify-center">
-          <div class="space-y-6 text-gray-300 text-base sm:text-lg leading-relaxed">
-            <p>
-              David uses the
-              <strong class="text-gold">Thermo Scientific Niton DXL Advanced XRF Gold Tester</strong>
-              — a $21,750 device that provides exact gold content instantly,
-              without damaging your jewelry.
-            </p>
-            <p>
-              Unlike cheap acid-scratch tests that can permanently harm your
-              items, this device offers non-invasive, transparent, and
-              trustworthy results you can see in real-time.
-            </p>
-            <p>
-              Watch the process through the built-in viewing window as your
-              jewelry is tested — no hidden steps, no rough estimates.
-            </p>
+        <div class="grid grid-cols-1 xl:grid-cols-2 gap-16 items-stretch">
+          <div class="flex justify-center">
+            <img
+              src="weight_machine.png"
+              alt="Thermo Scientific Niton DXL Gold Tester"
+              class="rounded-3xl shadow-2xl w-full max-w-md object-cover"
+            />
+          </div>
+          <div class="flex flex-col justify-center">
+            <div
+              class="space-y-6 text-darkgray text-base sm:text-lg leading-relaxed"
+            >
+              <p>
+                David uses the
+                <strong class="text-gold">
+                  Thermo Scientific Niton DXL Advanced XRF Gold Tester
+                </strong>
+                — a $21,750 device that provides exact gold content instantly,
+                without damaging your jewelry.
+              </p>
+              <p>
+                Unlike cheap acid-scratch tests that can permanently harm your
+                items, this device offers non-invasive, transparent, and
+                trustworthy results you can see in real-time.
+              </p>
+              <p>
+                Watch the process through the built-in viewing window as your
+                jewelry is tested — no hidden steps, no rough estimates.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Expertise Section -->
-  <section class="py-10 sm:py-16 md:py-20 bg-navy-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12 sm:mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gold mb-4">
-          WE OFFER EXPERT, NO OBLIGATION EVALUATIONS
-        </h2>
-        <p class="text-base sm:text-lg text-gray-300">
-          Professional assessment of your precious items
-        </p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div class="text-center fade-in">
-          <div class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-coins text-navy-900 text-xl sm:text-2xl"></i>
-          </div>
-          <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-            Gold, Silver, Platinum & Coins
-          </h4>
-        </div>
-        <div class="text-center fade-in">
-          <div class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-gem text-navy-900 text-xl sm:text-2xl"></i>
-          </div>
-          <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-            Jewelry
-          </h4>
-        </div>
-        <div class="text-center fade-in">
-          <div class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i class="fas fa-utensils text-navy-900 text-xl sm:text-2xl"></i>
-          </div>
-          <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-            Hollowware & Flatware
-          </h4>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonial Section -->
-  <section class="testimonial-bg py-16 sm:py-24 md:py-32">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <div class="text-white">
-        <blockquote class="text-xl sm:text-2xl font-light mb-8 leading-relaxed">
-          For over 60 years, we've bought and sold gold and silver providing
-          our customers expert knowledge and honest value in every
-          transaction. Whether you are looking to invest in bullion or sell
-          your jewelry, we can meet your needs.
-        </blockquote>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-10 sm:py-16 md:py-20 bg-gradient-to-r from-navy-700 to-navy-800">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-center sm:text-left">
-        <div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2">
-            Schedule a Home Visit<br class="hidden sm:block" />
-            or Visit Our Store
+    <!-- Expertise Section -->
+    <section class="py-10 sm:py-16 md:py-20 bg-navy-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 sm:mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-gold mb-4">
+            WE OFFER EXPERT, NO OBLIGATION EVALUATIONS
           </h2>
           <p class="text-base sm:text-lg text-gray-300">
-            Call us now for appointments or inquiries!
+            Professional assessment of your precious items
           </p>
         </div>
-        <a href="tel:5551234567"
-          class="inline-flex items-center border-2 border-gold text-white hover:bg-gold hover:text-navy-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all shadow-lg bg-gradient-to-r from-gold to-yellow-500 hover:from-white hover:to-white hover:border-navy-700">
-          <i class="fas fa-phone-alt mr-3"></i>
-          Call (555) 123-4567
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer id="contact" class="bg-navy-900 text-gray-300 py-10 sm:py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <!-- Logo & Social -->
-        <div>
-          <img src="Glister Gold Logo.png" alt="Glister Gold Logo" class="max-w-[200px] h-auto mb-6" />
-          <div class="flex space-x-4">
-            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
-              <i class="fab fa-facebook text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
-              <i class="fab fa-twitter text-xl"></i>
-            </a>
-            <a href="#" class="text-gray-400 hover:text-gold transition-colors">
-              <i class="fab fa-instagram text-xl"></i>
-            </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div class="text-center fade-in">
+            <div
+              class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-coins text-navy-900 text-xl sm:text-2xl"></i>
+            </div>
+            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
+              Gold, Silver, Platinum & Coins
+            </h4>
           </div>
-        </div>
-
-        <!-- Walk-In Lobby -->
-        <div>
-          <h4 class="text-lg font-semibold mb-4 text-gold">Walk-In Lobby</h4>
-          <p class="text-gray-300 text-base sm:text-lg">
-            Monday – Friday<br />
-            9:00 AM to 10:00 PM
-          </p>
-        </div>
-
-        <!-- Contact Info -->
-        <div>
-          <h4 class="text-lg font-semibold mb-4 text-gold">Contact Info</h4>
-          <div class="space-y-3 text-gray-300 text-base sm:text-lg">
-            <div class="flex items-center">
-              <i class="fas fa-phone mr-3"></i>
-              <span>(555) 123-4567</span>
+          <div class="text-center fade-in">
+            <div
+              class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-gem text-navy-900 text-xl sm:text-2xl"></i>
             </div>
-            <div class="flex items-center">
-              <i class="fas fa-envelope mr-3"></i>
-              <span>info@glistergold.com</span>
+            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
+              Jewelry
+            </h4>
+          </div>
+          <div class="text-center fade-in">
+            <div
+              class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-utensils text-navy-900 text-xl sm:text-2xl"></i>
             </div>
-            <div class="flex items-center">
-              <i class="fas fa-map-marker-alt mr-3"></i>
-              <span>123 Main St, Buffalo, NY 14202</span>
-            </div>
+            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
+              Hollowware & Flatware
+            </h4>
           </div>
         </div>
       </div>
-      <div class="border-t border-navy-700 mt-10 pt-8 text-center text-gray-500 text-sm sm:text-base">
-        <p>
-          &copy; 2025 Glister Gold. All rights reserved. | Privacy Policy |
-          Terms of Use
-        </p>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-bg py-16 sm:py-24 md:py-32">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-white">
+          <blockquote
+            class="text-xl sm:text-2xl font-light mb-8 leading-relaxed"
+          >
+            For over 60 years, we've bought and sold gold and silver providing
+            our customers expert knowledge and honest value in every
+            transaction. Whether you are looking to invest in bullion or sell
+            your jewelry, we can meet your needs.
+          </blockquote>
+        </div>
       </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-10 sm:py-16 md:py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center gap-6 text-center sm:text-left"
+        >
+          <div>
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-bold text-navy-900 mb-2"
+            >
+              Schedule a Home Visit<br class="hidden sm:block" />
+              or Visit Our Store
+            </h2>
+            <p class="text-base sm:text-lg text-gray-700">
+              Call us now for appointments or inquiries!
+            </p>
+          </div>
+          <a
+            href="tel:5551234567"
+            class="inline-flex items-center border-2 border-navy-700 text-white bg-gradient-to-r from-navy-700 to-navy-900 hover:from-gold hover:to-yellow-500 hover:text-navy-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold transition-all shadow-lg"
+          >
+            <i class="fas fa-phone-alt mr-3"></i>
+            Call (555) 123-4567
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-navy-900 text-gray-300 py-10 sm:py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Logo & Social -->
+          <div>
+            <img
+              src="Glister Gold Logo.png"
+              alt="Glister Gold Logo"
+              class="max-w-[200px] h-auto mb-6"
+            />
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gold transition-colors"
+              >
+                <i class="fab fa-facebook text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gold transition-colors"
+              >
+                <i class="fab fa-twitter text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gold transition-colors"
+              >
+                <i class="fab fa-instagram text-xl"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Walk-In Lobby -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-gold">Walk-In Lobby</h4>
+            <p class="text-gray-300 text-base sm:text-lg">
+              Monday – Friday<br />
+              9:00 AM to 10:00 PM
+            </p>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h4 class="text-lg font-semibold mb-4 text-gold">Contact Info</h4>
+            <div class="space-y-3 text-gray-300 text-base sm:text-lg">
+              <div class="flex items-center">
+                <i class="fas fa-phone mr-3"></i>
+                <span>(555) 123-4567</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-envelope mr-3"></i>
+                <span>info@glistergold.com</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-3"></i>
+                <span>123 Main St, Buffalo, NY 14202</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Footer Bottom Bar -->
+    <div class="bg-white text-center text-gray-700 py-4 text-sm sm:text-base">
+      <p>
+        &copy; 2025 Glister Gold. All rights reserved. | Privacy Policy | Terms
+        of Use
+      </p>
     </div>
-  </footer>
 
-  <!-- Fade-in JS -->
-  <script>
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px",
-    };
+    <!-- Fade-in JS -->
+    <script>
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
       });
-    }, observerOptions);
-
-    document.querySelectorAll(".fade-in").forEach((el) => {
-      observer.observe(el);
-    });
-  </script>
-</body>
-
+    </script>
+  </body>
 </html>

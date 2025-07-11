@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Test - Glister Gold</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // 🟡 Define your custom color palette here!
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#CC9933',        // Gold
+            secondary: '#000033',      // Navy
+            darkBg: '#000000',         // Black
+            textDark: '#333333',       // Dark Gray text
+            textLight: '#FFFFFF',      // White text
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-lightBg text-textDark font-sans">
+
+  <!-- Header -->
+  <header class="bg-secondary text-textLight py-4 px-6">
+    <div class="flex justify-between items-center">
+      <h1 class="text-xl font-bold text-primary">Glister Gold</h1>
+      <nav class="flex gap-4 text-sm">
+        <a href="#" class="hover:text-accent">Home</a>
+        <a href="#" class="hover:text-accent">Services</a>
+        <a href="#" class="hover:text-accent">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-16 px-6 text-center bg-primary text-textLight">
+    <h2 class="text-4xl font-bold mb-4">See Your Colors in Action!</h2>
+    <p class="text-lg">This section helps you test different color combinations for your website.</p>
+    <a href="#" class="mt-6 inline-block bg-secondary text-primary font-bold px-6 py-3 rounded hover:bg-accent hover:text-textLight transition">
+      Call to Action
+    </a>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="py-16 px-6 bg-lightBg">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <div class="bg-secondary text-textLight p-6 rounded shadow hover:bg-primary hover:text-darkBg transition">
+        <h3 class="text-xl font-bold mb-4">Card One</h3>
+        <p>Sample text for testing background and text color contrast.</p>
+      </div>
+      <div class="bg-primary text-secondary p-6 rounded shadow hover:bg-secondary hover:text-textLight transition">
+        <h3 class="text-xl font-bold mb-4">Card Two</h3>
+        <p>Sample text for testing background and text color contrast.</p>
+      </div>
+      <div class="bg-accent text-textLight p-6 rounded shadow hover:bg-primary hover:text-darkBg transition">
+        <h3 class="text-xl font-bold mb-4">Card Three</h3>
+        <p>Sample text for testing background and text color contrast.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-secondary text-textLight py-6 px-6 text-center">
+    &copy; 2025 Glister Gold. All rights reserved.
+  </footer>
+
+</body>
+</html>
