@@ -106,6 +106,20 @@
       .float-flag {
         animation: float 3s ease-in-out infinite;
       }
+      .testimonial-pagination .swiper-pagination-bullet {
+        background-color: #D4AF37;
+      }
+      .testimonialSwiper .swiper-wrapper {
+        align-items: stretch;
+      }
+      .testimonialSwiper .swiper-slide {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .testimonialSwiper .swiper-slide > div {
+        flex-grow: 1;
+      }
     </style>
   </head>
 
@@ -129,7 +143,7 @@
             class="flex items-center text-darkgray text-sm sm:text-base lg:text-lg"
           >
             <i class="fas fa-phone text-[#D4AF37] mr-2"></i>
-            <span>Contact a Live Trader:</span>
+            <span>Contact Us:</span>
             <span class="ml-1 font-semibold underline text-redbrand"
               >(555) 123-4567</span
             >
@@ -138,7 +152,7 @@
       </div>
     </header>
 
-    <section class="py-6 sm:py-8 lg:py-10">
+    <section class="bg-navy-700 py-6 sm:py-8 lg:py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
           <div class="text-center fade-in">
@@ -661,45 +675,7 @@
             Know Exactly What Your Precious Items Are Worth Today
           </p>
         </div>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8"
-        >
-          <div class="text-center fade-in">
-            <div
-              class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
-            >
-              <i class="fas fa-coins text-navy-900 text-xl sm:text-2xl"></i>
-            </div>
-            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-              Gold, Silver, Platinum & Coins
-            </h4>
-          </div>
-          <div class="text-center fade-in">
-            <div
-              class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
-            >
-              <i class="fas fa-gem text-navy-900 text-xl sm:text-2xl"></i>
-            </div>
-            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-              Jewelry
-            </h4>
-          </div>
-          <div class="text-center fade-in">
-            <div
-              class="bg-gold w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4"
-            >
-              <i class="fas fa-utensils text-navy-900 text-xl sm:text-2xl"></i>
-            </div>
-            <h4 class="font-semibold text-gray-200 text-base sm:text-lg mb-2">
-              Hollowware & Flatware
-            </h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonial-bg py-12 sm:py-16 md:py-24 lg:py-32">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="text-white">
           <blockquote
             class="text-lg sm:text-xl md:text-2xl font-light mb-6 sm:mb-8 leading-relaxed"
@@ -712,21 +688,22 @@
           </blockquote>
         </div>
       </div>
+      </div>
     </section>
 
-    <section class="py-10 sm:py-16 md:py-20 bg-white">
+    <section class="testimonial-bg py-12 sm:py-16 md:py-24 lg:py-32">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           class="flex flex-col items-center justify-center gap-6 sm:gap-8 text-center"
         >
           <div>
             <h2
-              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-2"
+              class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold  mb-2"
             >
               Schedule a Home Visit<br class="hidden sm:block" />
               or Stop By Our Store
             </h2>
-            <p class="text-base sm:text-lg text-gray-700">
+            <p class="text-base sm:text-lg ">
               Call us now for appointments or inquiries!
             </p>
           </div>
@@ -737,6 +714,125 @@
             <i class="fas fa-phone-alt mr-2 sm:mr-3"></i>
             Call (555) 123-4567
           </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-10 sm:py-16 md:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 sm:mb-12 md:mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-darkgray">
+            What Our Clients Say
+          </h2>
+        </div>
+        <div class="swiper testimonialSwiper" style="padding-bottom: 40px;">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "Glister Gold made selling my old jewelry a breeze. Their team was professional, and I received a fair price quickly. Highly recommended!"
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Sarah L.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "I was impressed with their transparency and the advanced technology they use. I knew I was getting an accurate valuation."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Michael B.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "The best place to sell bullion. Their rates are competitive, and the process is secure and straightforward. I'll be back for sure."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- David R.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "I inherited some old silverware and had no idea what it was worth. Glister Gold appraised it for free and gave me a great offer."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Emily K.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "Their customer service is top-notch. They answered all my questions and made me feel comfortable throughout the entire process."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Jessica T.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "Fast, fair, and friendly. I couldn't ask for a better experience selling my coins. I'll definitely be a returning customer."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Tom H.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "The non-destructive testing gave me peace of mind. It's great to see a business that invests in technology to ensure fairness."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Amanda C.</p>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="bg-navy-800 p-6 rounded-lg text-white flex flex-col">
+                <p class="mb-4 flex-grow">
+                  "I sold some scrap gold and was very happy with the payout. The staff was knowledgeable and made the whole thing simple."
+                </p>
+                <div class="flex items-center">
+                  <div class="text-gold">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                  </div>
+                  <p class="font-semibold ml-4">- Chris P.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination testimonial-pagination"></div>
         </div>
       </div>
     </section>
@@ -850,6 +946,30 @@
 
       document.querySelectorAll(".fade-in").forEach((el) => {
         observer.observe(el);
+      });
+
+      const testimonialSwiper = new Swiper(".testimonialSwiper", {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".testimonial-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
       });
     </script>
   </body>
